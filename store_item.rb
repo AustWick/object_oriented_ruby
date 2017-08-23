@@ -19,26 +19,44 @@ class Item
 
 end
 
+class Food < Item
+
+  attr_reader :shelf_life
+
+  def initialize(input_options)
+    super
+    @shelf_life = input_options[:shelf_life]
+  end
+
+end
+
 item_1 = Item.new(
-                first_name: "pet", 
+                name: "pet", 
                 legs: 4, 
                 fur: "brown", 
                 alive: true
                 )
 
 item_2 = Item.new(
-                  first_name: "table", 
+                  name: "table", 
                   legs: 4, 
                   fur: "none", 
                   alive: false
                   )
 
 item_3 = Item.new(
-                  first_name: "couch", 
+                  name: "couch", 
                   legs: 2, 
                   fur: "zebra", 
                   alive: false
                   )
 
+food = Food.new(
+                name: "apple",
+                legs: 0,
+                fur: "none",
+                alive: false,
+                shelf_life: 3)
 item_1.remove_a_leg
 puts item_1.legs
+p food
